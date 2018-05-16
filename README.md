@@ -18,7 +18,6 @@ the [kube-insight-manifests
 repo](https://github.com/elastisys/kube-insight-manifests/tree/master/logging/).
 
 
-
 ## REST API
 The REST API includes the endpoints outlined in the below sections.
 
@@ -69,7 +68,7 @@ If the response code is different from `200`, the service is to be considered
 
 ### GET /query
 A query endpoint for querying historical log records for a certain pod container
-(in a given namespace). It can be queried via:
+(in a given namespace) over a certain time period. It can be queried via:
 
     /query?namespace=<namespace>&pod_name=<name>&container_name=<name>&start_time=<timestamp>&end_time=<timestamp>
 
