@@ -62,11 +62,7 @@ func (c *LogStore) Connect() error {
 		return err
 	}
 
-	if err := c.createSchemaIfNotExists(); err != nil {
-		return err
-	}
-
-	return nil
+	return c.createSchemaIfNotExists()
 }
 
 // Disconnect disconnects the LogStore from the Cassandra cluster.

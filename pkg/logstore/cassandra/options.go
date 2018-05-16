@@ -51,14 +51,6 @@ func NewReplicationFactorMap(asJSON string) (ReplicationFactorMap, error) {
 	return m, nil
 }
 
-func (r ReplicationFactorMap) ToJSON() string {
-	bytes, err := json.Marshal(r)
-	if err != nil {
-		panic(fmt.Errorf("failed to convert ReplicationFactorMap to JSON: %s", err))
-	}
-	return string(bytes)
-}
-
 // String returns the ReplicationFactorMap as a string of form
 //     'datacenter1': 2, 'datacenter2': 3, 'datacenter3': 4
 func (r ReplicationFactorMap) String() string {
