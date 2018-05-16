@@ -100,10 +100,7 @@ func (d *CQLDriver) Execute(statement string, placeholders ...interface{}) error
 	}
 
 	stmt := d.session.Query(statement, placeholders...)
-	if err := stmt.Exec(); err != nil {
-		return err
-	}
-	return nil
+	return stmt.Exec()
 }
 
 // Query runs a SELECT query statement against cassandra. Note: if
