@@ -2,6 +2,14 @@ language: go
 
 go:
   - "1.10"
+
+# make sure dep gets installed before building
+env:
+  - DEP_VERSION="0.4.1"
+before_install:
+  - curl -L -s https://github.com/golang/dep/releases/download/v${DEP_VERSION}/dep-linux-amd64 -o $GOPATH/bin/dep
+  - chmod +x $GOPATH/bin/dep
+  
 # skip "go get -t ./..." since all dependencies are vendored    
 install: true 
 script: make build
