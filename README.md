@@ -1,3 +1,7 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/elastisys/kube-insight-logserver)](https://goreportcard.com/report/github.com/elastisys/kube-insight-logserver)
+[![Build Status](https://travis-ci.org/elastisys/kube-insight-logserver.svg?branch=master)](https://travis-ci.org/elastisys/kube-insight-logserver)
+[![Coverage](https://codecov.io/gh/elastisys/kube-insight-logserver/branch/master/graph/badge.svg)](https://codecov.io/gh/elastisys/kube-insight-logserver)
+
 ## kube-insight-logserver
 `kube-insight-logserver` is a logging data service that stores Kubernetes pod
 logs in Cassandra for later querying. It exposes a HTTP REST API, which can be
