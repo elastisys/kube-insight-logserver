@@ -616,5 +616,5 @@ func TestGetMetrics(t *testing.T) {
 
 	resp, _ = client.Get(testServer.URL + "/metrics")
 	require.Equalf(t, http.StatusOK, resp.StatusCode, "unexpected status code")
-	require.Containsf(t, readBody(t, resp), "total_requests{method=GET,path=/metrics,statusCode=200} 1", "missing expected metric")
+	require.Containsf(t, readBody(t, resp), `total_requests{method="GET",path="/metrics",statusCode="200"} 1`, "missing expected metric")
 }
