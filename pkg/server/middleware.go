@@ -120,15 +120,15 @@ func (mw *MetricsMiddleware) Metrics() *bytes.Buffer {
 	defer mw.updateMutex.Unlock()
 
 	for dim, val := range mw.TotalRequests {
-		buffer.WriteString(fmt.Sprintf(`total_requests{method="%s",path="%s",statusCode="%d"} %d\n`,
+		buffer.WriteString(fmt.Sprintf("total_requests{method=\"%s\",path=\"%s\",statusCode=\"%d\"} %d\n",
 			dim.Method, dim.Path, dim.StatusCode, val))
 	}
 	for dim, val := range mw.SumResponseTime {
-		buffer.WriteString(fmt.Sprintf(`sum_response_time{method="%s",path="%s",statusCode="%d"} %f\n`,
+		buffer.WriteString(fmt.Sprintf("sum_response_time{method=\"%s\",path=\"%s\",statusCode=\"%d\"} %f\n",
 			dim.Method, dim.Path, dim.StatusCode, val))
 	}
 	for dim, val := range mw.AvgResponseTime {
-		buffer.WriteString(fmt.Sprintf(`avg_response_time{method="%s",path="%s",statusCode="%d"} %f\n`,
+		buffer.WriteString(fmt.Sprintf("avg_response_time{method=\"%s\",path=\"%s\",statusCode=\"%d\"} %f\n",
 			dim.Method, dim.Path, dim.StatusCode, val))
 	}
 
